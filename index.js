@@ -33,7 +33,7 @@ class callingcodeWrapper {
             query = {};
         }
 
-        var requiredParams = ["name"];
+        var requiredParams = ["country"];
         if (requiredParams.length > 0) {
             for (var i = 0; i < requiredParams.length; i++) {
                 if (!query[requiredParams[i]]) {
