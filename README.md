@@ -48,7 +48,7 @@ Using the API client, you can perform requests to the API.
 
 ```
 var query = {
-  name: "FR"
+  country: "FR"
 };
 ```
 
