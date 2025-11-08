@@ -1,5 +1,4 @@
-Country Calling Code API
-============
+# Country Calling Code API
 
 Country Calling Code is a simple tool for getting the country's international dialing codes. It returns the country's international dialing codes.
 
@@ -7,54 +6,62 @@ Country Calling Code is a simple tool for getting the country's international di
 ![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
 ![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Javascript Wrapper for the [Country Calling Code API](https://apiverve.com/marketplace/api/callingcode)
+This is a Javascript Wrapper for the [Country Calling Code API](https://apiverve.com/marketplace/callingcode)
 
 ---
 
 ## Installation
-	npm install @apiverve/callingcode --save
+
+Using npm:
+```shell
+npm install @apiverve/callingcode
+```
+
+Using yarn:
+```shell
+yarn add @apiverve/callingcode
+```
 
 ---
 
 ## Configuration
 
-Before using the callingcode API client, you have to setup your account and obtain your API Key.  
+Before using the Country Calling Code API client, you have to setup your account and obtain your API Key.
 You can get it by signing up at [https://apiverve.com](https://apiverve.com)
 
 ---
 
-## Usage
+## Quick Start
 
-The Country Calling Code API documentation is found here: [https://docs.apiverve.com/api/callingcode](https://docs.apiverve.com/api/callingcode).  
+[Get started with the Quick Start Guide](https://docs.apiverve.com/quickstart)
+
+The Country Calling Code API documentation is found here: [https://docs.apiverve.com/ref/callingcode](https://docs.apiverve.com/ref/callingcode).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
 
-```
-var callingcodeAPI = require('@apiverve/callingcode');
-var api = new callingcodeAPI({
-    api_key: [YOUR_API_KEY],
-    secure: true //(Optional, defaults to true)
+```javascript
+const callingcodeAPI = require('@apiverve/callingcode');
+const api = new callingcodeAPI({
+    api_key: '[YOUR_API_KEY]'
 });
 ```
 
 ---
 
+## Usage
+
+---
 
 ### Perform Request
-Using the API client, you can perform requests to the API.
 
-###### Define Query
+Using the API is simple. All you have to do is make a request. The API will return a response with the data you requested.
 
-```
+```javascript
 var query = {
   country: "FR"
 };
-```
 
-###### Simple Request (using Callback)
-
-```
 api.execute(query, function (error, data) {
     if (error) {
         return console.error(error);
@@ -64,9 +71,52 @@ api.execute(query, function (error, data) {
 });
 ```
 
-###### Example Response
+---
 
+### Using Promises
+
+You can also use promises to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+var query = {
+  country: "FR"
+};
+
+api.execute(query)
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
 ```
+
+---
+
+### Using Async/Await
+
+You can also use async/await to make requests. The API returns a promise that you can use to handle the response.
+
+```javascript
+async function makeRequest() {
+    var query = {
+  country: "FR"
+};
+
+    try {
+        const data = await api.execute(query);
+        console.log(data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+```
+
+---
+
+## Example Response
+
+```json
 {
   "status": "ok",
   "error": null,
@@ -77,8 +127,7 @@ api.execute(query, function (error, data) {
     "callingcodes": [
       "+33"
     ]
-  },
-  "code": 200
+  }
 }
 ```
 
@@ -91,6 +140,7 @@ Need any assistance? [Get in touch with Customer Support](https://apiverve.com/c
 ---
 
 ## Updates
+
 Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Twitter.
 
 ---
@@ -104,7 +154,7 @@ All usage of the APIVerve website, API, and services is subject to the [APIVerve
 ## License
 Licensed under the The MIT License (MIT)
 
-Copyright (&copy;) 2025 APIVerve, and EvlarSoft LLC
+Copyright (&copy;) 2025 APIVerve, and Evlar LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
